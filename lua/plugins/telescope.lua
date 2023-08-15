@@ -2,6 +2,7 @@ return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
+    "debugloop/telescope-undo.nvim"
   },
   cmd = "Telescope",
   opts = function()
@@ -33,5 +34,16 @@ return {
       },
     }
   end,
-  config = require "plugins.configs.telescope",
+  config = function() 
+    require "plugins.configs.telescope"
+    require("telescope").setup({
+      extensions  = {
+        undo = {
+          -- telescope-undo
+        }
+      }
+    })
+    
+    require("telescope").load_extension("undo")
+  end
 }

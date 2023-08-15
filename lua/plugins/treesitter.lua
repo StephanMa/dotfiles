@@ -22,6 +22,7 @@ return {
     "TSUpdateSync",
   },
   build = ":TSUpdate",
+  ensure_installed = {"html"},
   opts = function()
     return {
       autotag = { enable = true },

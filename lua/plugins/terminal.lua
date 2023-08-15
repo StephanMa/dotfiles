@@ -1,0 +1,3 @@
+return {
+  'rebelot/terminal.nvim',
+}

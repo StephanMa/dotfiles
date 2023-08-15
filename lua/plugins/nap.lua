@@ -1,0 +1,3 @@
+return {
+  "liangxianzhe/nap.nvim",
+}
