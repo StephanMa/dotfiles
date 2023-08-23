@@ -29,11 +29,17 @@ vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") e
 
 vim.keymap.set("n", "<leader>tt", "<Cmd>tabnew | term<CR>")
 
+
+vim.keymap.set("n", "<leader>j", function() require("chatgpt").openChat() end)
+
+
 require("overseer").setup({
   templates = { "builtin", "tasks" },
 })
 
 require("nap").setup()
+
+require("chatgpt").setup()
 
 require'web-tools'.setup({
   keymaps = {
@@ -115,6 +121,5 @@ require("workspaces").setup()
 
 require("buffer_manager").setup()
 
-require("buffer_manager.ui").toggle_quick_menu()
 
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
